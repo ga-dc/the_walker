@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>The Walker</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <style>
     img {
       position: absolute;
@@ -12,16 +13,22 @@
     }
 
     img.flip {
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
     }
+
+    img.flipped {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+
   </style>
 </head>
 <body>
-  
+
   <img id="walker" src="http://media.giphy.com/media/XGnWMiVXL87Xa/giphy.gif">
 
   <script src="walker.js"></script>
-  
+
 </body>
 </html>
