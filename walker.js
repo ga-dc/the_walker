@@ -55,7 +55,6 @@ $("#walker").click(function(){
         type: "GET",
         dataType: "json"
     }).done(function(response){
-        console.log(response);
   $(".quote").append("<blockquote>" + response.quote + "</blockquote>");
   $(".quote").append("<p class='author'>-" + response.author + "</p>");
 }).fail(function (){
