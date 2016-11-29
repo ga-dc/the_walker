@@ -59,13 +59,13 @@ window.addEventListener("resize", function(){
 });
 //Start of code to get quote
 
-var url = "http://www.icndb.com/api/?t=";
+var url = "http://api.icndb.com/jokes/random/?t=";
 $.ajax({
   url: url,
   type: 'GET',
   dataType: 'json',
-}).always(function(){
-      console.log('something happened');
+}).done(function(response){
+      console.log(response.joke);/*('something happened');*/
     });
 
 /*function getQuote(){
@@ -74,7 +74,7 @@ $('h1')./*innerHTML*//*replaceWith('url');});
 }*/
 document.getElementById('walker').onClick = function getQuote(){
   alert('onClick Event detected');
-  $('h1').html('url');
+  $('h1').html('joke');
 };
 /*$.ajax({
   url: url,
