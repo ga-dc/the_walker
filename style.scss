@@ -1,0 +1,14 @@
+$scale: scaleX(-1);
+
+img {
+  cursor: pointer;
+  margin-top: 230px;
+  position: absolute;
+  width: 200px;
+}
+
+.flip {
+  @extend img;
+  -webkit-transform: $scale;
+  transform: $scale;
+}
