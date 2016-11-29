@@ -1,0 +1,37 @@
+$width: 100px;
+$font-stack: 'Bree Serif', serif;
+$size1: 24px;
+$size2: 18px;
+$color: #333;
+@mixin margin-top($sizeTop) {
+    margin-top: $sizeTop;
+}
+@import '_walkerstyle.scss';
+
+
+
+h1 {
+  text-align: center;
+  font: 100% $font-stack;
+  font-size: $size1;
+  }
+
+h2 {
+  @extend h1;
+  color:$color;
+  font-size: $size2;
+
+}
+
+img {
+  @include margin-top(250px);
+  width: $width;
+  position: $position;
+  // margin-top: 230px;
+  cursor: pointer;
+}
+
+img.flip {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
