@@ -18,15 +18,15 @@ function update() {
 if(walkingLeft){
   // Move "speed" pixels per iteration:
   xPos -= speed;
-  // Reset back to left side, when we run into right wall
+  // Turn around and walk right
   if(xPos <= leftBorder){
     $("#walker").toggleClass("flipped");
     walkingLeft = false;
   }
   // reposition the walker
   walker.style.left = xPos + "px";
-} else if (walkingLeft === false) {
-    // Reset back to left side, when we run into right wall
+} else {
+    // Turn around and walk the other direction
     xPos += speed;
     if(xPos >= rightBorder){
       $("#walker").toggleClass("flipped");
