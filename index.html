@@ -5,16 +5,13 @@
   <title>The Walker</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <style>
+
     img {
       position: absolute;
       width: 200px;
-      margin-top: 230px;
+      margin-top: 30px;
       cursor: pointer;
-    }
 
-    img.flip {
-      -webkit-transform: scaleX(1);
-      transform: scaleX(1);
     }
 
     img.flipped {
@@ -22,9 +19,43 @@
         transform: scaleX(-1);
     }
 
+    .quote{
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+    blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  font-size: 25px;
+  width: 700px;
+  margin: 0 auto;
+  font-style: italic;
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 3em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+.author {
+    text-align: center;
+    font-weight: bold;
+}
+
   </style>
 </head>
 <body>
+    <div class="quote"></div>
 
   <img id="walker" src="http://media.giphy.com/media/XGnWMiVXL87Xa/giphy.gif">
 

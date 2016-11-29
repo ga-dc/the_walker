@@ -2,7 +2,7 @@
 var walker = document.getElementById('walker');
 
 // Configure motion params:
-var walkingLeft = false;
+var walkingLeft = true;
 var leftBorder = 0;
 var rightBorder = window.innerWidth - walker.offsetWidth;
 var speed = 10;
@@ -15,18 +15,27 @@ var xPos = rightBorder;
 function update() {
   // ensure walker is facing to the right (reverse of "normal")
   // CSS does this for us, we just assign the right class.
-  walker.classList.add("flip");
-
+if(walkingLeft){
   // Move "speed" pixels per iteration:
   xPos -= speed;
   // Reset back to left side, when we run into right wall
   if(xPos <= leftBorder){
-    xPos = rightBorder;
+    $("#walker").toggleClass("flipped");
+    walkingLeft = false;
   }
   // reposition the walker
   walker.style.left = xPos + "px";
+} else if (walkingLeft === false) {
+    // Reset back to left side, when we run into right wall
+    xPos += speed;
+    if(xPos >= rightBorder){
+      $("#walker").toggleClass("flipped");
+      walkingLeft = true;
+    }
+    // reposition the walker
+    walker.style.left = xPos + "px";
+    }
 }
-
 
 
 // Establish an update interval (framerate)
@@ -38,20 +47,18 @@ setInterval(update, 100);
 window.addEventListener("resize", function(){
   rightBorder = window.innerWidth - walker.offsetWidth;
 });
-
+let url = "http://quotes.stormconsultancy.co.uk/random.json";
 $("#walker").click(function(){
-    $("#walker").toggleClass("flipped");
+    $(".quote").empty();
+    $.ajax({
+        url: url,
+        type: "GET",
+        dataType: "json"
+    }).done(function(response){
+        console.log(response);
+  $(".quote").append("<blockquote>" + response.quote + "</blockquote>");
+  $(".quote").append("<p class='author'>-" + response.author + "</p>");
+}).fail(function (){
+  console.log("fail");
 });
-
-$("body").keydown(function(e) {
-  if(e.keyCode == 37) { // left
-    $("#walker").animate({
-      xPos: "-=10"
-    });
-  }
-  else if(e.keyCode == 39) { // right
-    $("#walker").animate({
-      xPos: "+=10"
-    });
-  }
 });
