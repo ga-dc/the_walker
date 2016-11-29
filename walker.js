@@ -59,7 +59,7 @@ window.addEventListener("resize", function(){
 });
 //Start of code to get quote
 
-var url = "https://www.theysaidso.com/?t=";
+var url = "http://www.icndb.com/api/?t=";
 $.ajax({
   url: url,
   type: 'GET',
@@ -74,6 +74,7 @@ $('h1')./*innerHTML*//*replaceWith('url');});
 }*/
 document.getElementById('walker').onClick = function getQuote(){
   alert('onClick Event detected');
+  $('h1').html('url');
 };
 /*$.ajax({
   url: url,
