@@ -68,9 +68,10 @@ $.ajax({
       console.log('something happened');
     });
 
-/*function myFunction(){*/
-/*document.getElementById('#walker').addEventListener('click', function(){
-$('h1').replaceWith(url)};*/
+function getQuote(){
+document.getElementById('walker').addEventListener('click', function(){
+$('h1').replaceWith(url)};
+};
 /*$.ajax({
   url: url,
   type: 'GET',
