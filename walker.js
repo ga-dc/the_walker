@@ -68,9 +68,12 @@ $.ajax({
       console.log('something happened');
     });
 
-function getQuote(){
+/*function getQuote(){
 document.getElementById('walker').addEventListener('click', function(){
-$('h1').replaceWith(url)};
+$('h1')./*innerHTML*//*replaceWith('url');});
+}*/
+document.getElementById('walker').onClick = function getQuote(){
+  alert('onClick Event detected');
 };
 /*$.ajax({
   url: url,
