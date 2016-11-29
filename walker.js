@@ -1,11 +1,20 @@
 // Get the walker image:
+/*var
+document.getElementByID('');
+
+function (getQuote){
+  console.log("dghfdfhk");
+};*/
+/*$(document).ready(function() {*/
+
+
 var walker = document.getElementById('walker');
 
 // Configure motion params:
 var walkingLeft = true;
 var leftBorder = 0;
 var rightBorder = /*400;*/window.innerWidth - walker.offsetWidth;
-var speed = 80;
+var speed = 10;
 var xPos = rightBorder;
 // Have the stick figure start at the right border and start walking left
 // When he crosses the left border, have him turn around and start walking right (and vice versa)
@@ -48,3 +57,36 @@ walker.addEventListener ('click', function(){
 window.addEventListener("resize", function(){
   rightBorder = window.innerWidth - walker.offsetWidth;
 });
+//Start of code to get quote
+
+var url = "https://www.theysaidso.com/?t=";
+$.ajax({
+  url: url,
+  type: 'GET',
+  dataType: 'json',
+}).always(function(){
+      console.log('something happened');
+    });
+
+/*function myFunction(){*/
+/*document.getElementById('#walker').addEventListener('click', function(){
+$('h1').replaceWith(url)};*/
+/*$.ajax({
+  url: url,
+  type: 'GET',
+  dataType: 'json',
+}).always(function(){
+      console.log('something happened');
+    });*/
+
+//function getQuote(){document.getElementById('place_holder').innerHTML = url;
+
+//}
+
+/*$.ajax({
+  url: url,
+  type: 'GET',
+  dataType: 'json',
+}).always(function(){
+      console.log('something happened');
+    });*/
