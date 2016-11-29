@@ -58,24 +58,25 @@ window.addEventListener("resize", function(){
   rightBorder = window.innerWidth - walker.offsetWidth;
 });
 //Start of code to get quote
-
+//Add a click function on walker
 var url = "http://api.icndb.com/jokes/random/?t=";
 $.ajax({
   url: url,
   type: 'GET',
   dataType: 'json',
 }).done(function(response){
-      console.log(response.joke);/*('something happened');*/
+        $('h1').html(response.value.joke);/*('something happened');*/
     });
 
 /*function getQuote(){
 document.getElementById('walker').addEventListener('click', function(){
 $('h1')./*innerHTML*//*replaceWith('url');});
 }*/
-document.getElementById('walker').onClick = function getQuote(){
-  alert('onClick Event detected');
-  $('h1').html('joke');
-};
+/*document.getElementById('walker').addEventListener ('click', function getQuote(){
+  alert('onClick Event detected');*/
+/*document.body.place_holder.append('data');*/
+
+/*});*/
 /*$.ajax({
   url: url,
   type: 'GET',
